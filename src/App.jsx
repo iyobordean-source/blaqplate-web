@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import Menu from './pages/Menu';
+import Cart from './pages/Cart';
 import Notifications from './pages/Notifications';
 import Profile from './pages/Profile';
 import './index.css';
@@ -14,10 +16,12 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/menu" element={<Menu />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
 
-export default App
+export default App;

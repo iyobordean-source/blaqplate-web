@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import Button from './Button';
+import { useCart } from '../context/CartContext';
 
 function formatNaira(amount) {
   return `₦${amount.toLocaleString()}`;
 }
 
 function FoodCard({ item }) {
+  const { addToCart } = useCart();
+  const [justAdded, setJustAdded] = useState(false);
+
+  const handleAdd = () => {
+    addToCart(item);
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 900);
+  };
+
   return (
     <div className="food-card">
       <div className="food-image-wrap">
@@ -16,10 +27,10 @@ function FoodCard({ item }) {
         <div className="food-footer">
           <span className="food-price">{formatNaira(item.price)}</span>
           <Button
-            className="btn-primary btn-small"
-            onClick={() => alert(`${item.name} added to cart (coming soon)`)}
+            className={`btn-small ${justAdded ? 'btn-added' : 'btn-primary'}`}
+            onClick={handleAdd}
           >
-            Add
+            {justAdded ? 'Added ✓' : 'Add'}
           </Button>
         </div>
       </div>
