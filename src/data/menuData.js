@@ -1,0 +1,68 @@
+export const categories = ['All', 'Burgers', 'Chicken', 'Rice', 'Pizza', 'Drinks', 'Desserts'];
+
+export const menuItems = [
+  {
+    id: 1,
+    name: 'Smoky Jollof Platter',
+    description: 'Signature smoky jollof rice with grilled chicken and plantain.',
+    price: 4500,
+    category: 'Rice',
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 2,
+    name: 'Blaq Classic Burger',
+    description: 'Juicy beef patty, melted cheese, house sauce, brioche bun.',
+    price: 3800,
+    category: 'Burgers',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 3,
+    name: 'Peppered Beef Bowl',
+    description: 'Slow-cooked beef in rich pepper sauce with fried rice.',
+    price: 4200,
+    category: 'Rice',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 4,
+    name: 'Suya Skewers',
+    description: 'Spiced grilled skewers served with a fresh side salad.',
+    price: 3000,
+    category: 'Chicken',
+    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 5,
+    name: 'Loaded Pepperoni Pizza',
+    description: 'Wood-fired crust, mozzarella, and double pepperoni.',
+    price: 5500,
+    category: 'Pizza',
+    image: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 6,
+    name: 'Crispy Fried Chicken',
+    description: 'Golden crispy chicken with a side of spicy dip.',
+    price: 3600,
+    category: 'Chicken',
+    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 7,
+    name: 'Chilled Zobo Drink',
+    description: 'Refreshing house-made hibiscus drink, lightly spiced.',
+    price: 1200,
+    category: 'Drinks',
+    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 8,
+    name: 'Chocolate Lava Cake',
+    description: 'Warm molten chocolate cake with a scoop of vanilla ice cream.',
+    price: 2500,
+    category: 'Desserts',
+    image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=600&q=80',
+  },
+];
