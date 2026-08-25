@@ -1,10 +1,3 @@
-/* ===== Reset & Base ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #0f0f0f;
@@ -345,6 +338,7 @@ section {
     width: 100%;
   }
 }
+
 /* ===== Auth Pages (Login / Signup) ===== */
 .auth-page {
   min-height: 100vh;
@@ -679,7 +673,11 @@ section {
 
 /* Popular section */
 .section-title-row {
-  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .section-title-row h2 {
@@ -693,46 +691,22 @@ section {
 }
 
 .food-image-wrap {
+  width: 100%;
+  height: 160px;
+  border-radius: 14px 14px 0 0;
   overflow: hidden;
 }
 
 .food-image-wrap .food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 
 .food-card:hover .food-image-wrap .food-image {
   transform: scale(1.06);
-}
-
-/* Bonus Card */
-.bonus-card {
-  margin-top: 32px;
-  background: linear-gradient(135deg, #1c1508, #1a1a1a);
-  border: 1px solid #3a2c0f;
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.bonus-label {
-  color: #b8b8b8;
-  font-size: 0.85rem;
-  margin-bottom: 4px;
-}
-
-.bonus-card h3 {
-  font-size: 1.4rem;
-  color: #e0a527;
-  margin-bottom: 4px;
-}
-
-.bonus-amount {
-  color: #f5f5f5;
-  font-weight: 600;
 }
 
 /* Bottom Nav (mobile only) */
@@ -800,26 +774,6 @@ section {
   .greeting-section h1 {
     font-size: 1.4rem;
   }
-}
-/* ===== Fixed Food Image Sizing ===== */
-.food-image-wrap {
-  width: 100%;
-  height: 160px;
-  border-radius: 14px 14px 0 0;
-  overflow: hidden;
-}
-
-.food-image-wrap .food-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Bonus card sits higher now — tighten spacing above/below */
-.bonus-card {
-  margin-top: 4px;
-  margin-bottom: 24px;
 }
 
 /* ===== Placeholder Pages (Notifications / Profile) ===== */
@@ -936,6 +890,7 @@ section {
 .profile-menu-item svg {
   color: #6b6b6b;
 }
+
 /* ===== Cart Badge ===== */
 .cart-btn {
   position: relative;
@@ -985,14 +940,6 @@ section {
 }
 
 /* View Full Menu link on Dashboard */
-.section-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .view-menu-link {
   color: #e0a527;
   font-size: 0.85rem;
@@ -1154,7 +1101,7 @@ section {
   color: #e05a5a;
 }
 
-/* Bonus toggle */
+/* Bonus toggle (Cart page) */
 .bonus-toggle-card {
   display: flex;
   align-items: center;
@@ -1315,5 +1262,477 @@ section {
 
   .cart-item-subtotal {
     font-size: 0.85rem;
+  }
+}
+
+/* ===== Bonus Card (Dashboard) — revised for countdown ===== */
+.bonus-card {
+  margin-top: 4px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #1c1508, #1a1a1a);
+  border: 1px solid #3a2c0f;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bonus-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bonus-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #e0a527;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.bonus-sub {
+  color: #b8b8b8;
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+
+.bonus-card h3 {
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  margin-bottom: 10px;
+}
+
+.bonus-countdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.countdown-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #8a8a8a;
+  font-size: 0.78rem;
+}
+
+.countdown-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #f5f5f5;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.bonus-ready-text {
+  color: #6fbf8b;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ===== Rewards Page ===== */
+.rewards-page {
+  max-width: 560px;
+}
+
+.rewards-hero {
+  background: linear-gradient(135deg, #1c1508, #1a1a1a);
+  border: 1px solid #3a2c0f;
+  border-radius: 18px;
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rewards-brand {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #f5f5f5;
+  margin-bottom: 4px;
+}
+
+.rewards-brand span {
+  color: #e0a527;
+}
+
+.rewards-heading {
+  color: #b8b8b8;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.rewards-amount {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #e0a527;
+  margin-bottom: 4px;
+}
+
+.rewards-caption {
+  color: #8a8a8a;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.rewards-countdown-block {
+  border-top: 1px solid #3a2c0f;
+  padding-top: 20px;
+}
+
+.rewards-countdown-block .countdown-label {
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.rewards-countdown-value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #f5f5f5;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+}
+
+.rewards-ready-block {
+  border-top: 1px solid #3a2c0f;
+  padding-top: 20px;
+}
+
+.rewards-ready-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.rewards-ready-text {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rewards-ready-block .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rewards-explainer {
+  color: #b8b8b8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.how-it-works h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.how-it-works-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.how-step {
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.how-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #e0a527;
+  color: #0f0f0f;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.how-step p {
+  font-size: 0.85rem;
+  color: #d8d8d8;
+  font-weight: 600;
+}
+
+/* ===== Rewards Responsive ===== */
+@media (max-width: 400px) {
+  .rewards-amount {
+    font-size: 2rem;
+  }
+
+  .rewards-countdown-value {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .rewards-hero {
+    padding: 24px 18px;
+  }
+}
+
+@media (min-width: 600px) {
+  .how-it-works-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Checkout Page ===== */
+.checkout-page {
+  padding-bottom: 30px;
+}
+
+.checkout-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.checkout-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.checkout-form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkout-section {
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.checkout-section h2 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.checkout-section .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.field-error {
+  color: #f28b8b;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.pickup-note p {
+  color: #b8b8b8;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Order type toggle */
+.order-type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.order-type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  background-color: #0f0f0f;
+  color: #d8d8d8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-type-btn.active {
+  background-color: #e0a527;
+  border-color: #e0a527;
+  color: #0f0f0f;
+}
+
+/* Payment options */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  background-color: #0f0f0f;
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  text-align: left;
+}
+
+.payment-option.active {
+  border-color: #e0a527;
+  color: #f5f5f5;
+}
+
+.radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.radio-dot.checked {
+  border-color: #e0a527;
+}
+
+.radio-dot.checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e0a527;
+}
+
+/* Checkout summary column */
+.checkout-summary-col {
+  width: 100%;
+}
+
+.checkout-summary {
+  position: static;
+}
+
+.checkout-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.checkout-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: #d8d8d8;
+}
+
+.checkout-item-name {
+  max-width: 70%;
+}
+
+.checkout-item-qty {
+  color: #8a8a8a;
+}
+
+/* ===== Order Confirmation ===== */
+.confirmation-page {
+  max-width: 560px;
+  padding-bottom: 40px;
+}
+
+.confirmation-hero {
+  text-align: center;
+  padding: 20px 10px 28px;
+}
+
+.confirmation-hero svg {
+  color: #6fbf8b;
+  margin-bottom: 12px;
+}
+
+.confirmation-hero h1 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.confirmation-hero p {
+  color: #b8b8b8;
+  font-size: 0.9rem;
+}
+
+.confirmation-order-id {
+  margin-top: 10px;
+  color: #e0a527 !important;
+  font-weight: 700;
+  font-size: 0.88rem !important;
+}
+
+.confirmation-details {
+  margin-bottom: 24px;
+}
+
+.confirmation-meta {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.confirmation-meta p {
+  font-size: 0.86rem;
+  color: #d8d8d8;
+}
+
+.confirmation-btn {
+  width: 100%;
+}
+
+/* ===== Checkout Responsive ===== */
+@media (min-width: 900px) {
+  .checkout-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .checkout-form-col {
+    flex: 1.4;
+  }
+
+  .checkout-summary-col {
+    flex: 1;
+    position: sticky;
+    top: 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  .checkout-section {
+    padding: 16px;
+  }
+
+  .checkout-title {
+    font-size: 1.4rem;
   }
 }
