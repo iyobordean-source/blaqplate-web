@@ -1,0 +1,605 @@
+/* ===== Landing Page Only ===== */
+.landing {
+  background-color: #111111;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.landing-section-label {
+  display: inline-block;
+  color: #E85D04;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Reusable landing buttons (accent-driven, distinct from dashboard gold buttons) */
+.btn-landing-primary {
+  background-color: #E85D04;
+  color: #f5f5f5;
+}
+
+.btn-landing-primary:hover {
+  background-color: #ff7420;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(232, 93, 4, 0.35);
+}
+
+.btn-landing-outline {
+  background-color: transparent;
+  color: #f5f5f5;
+  border: 1.5px solid rgba(245, 245, 245, 0.5);
+}
+
+.btn-landing-outline:hover {
+  border-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile Nav Panel ===== */
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.mobile-nav-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 24px 20px;
+  border-top: 1px solid #232323;
+  background-color: #111111;
+  animation: slideDown 0.2s ease;
+}
+
+.mobile-nav-panel a,
+.mobile-nav-link {
+  padding: 12px 4px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #1e1e1e;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #f5f5f5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-signup {
+  color: #E85D04;
+  font-weight: 700;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Hero ===== */
+.landing-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 24px 60px;
+}
+
+.landing-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.landing-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 10, 10, 0.94) 20%,
+    rgba(10, 10, 10, 0.65) 55%,
+    rgba(10, 10, 10, 0.35) 100%
+  );
+}
+
+.landing-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  animation: fadeSlideUp 0.7s ease both;
+}
+
+.landing-eyebrow {
+  display: inline-block;
+  color: #E85D04;
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+}
+
+.landing-hero-content h1 {
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.landing-hero-content p {
+  font-size: 1.05rem;
+  color: #d8d8d8;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.landing-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating food card */
+.floating-food-card {
+  position: absolute;
+  z-index: 1;
+  right: 8%;
+  bottom: 8%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(21, 21, 21, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 245, 245, 0.12);
+  border-radius: 16px;
+  padding: 12px;
+  max-width: 260px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: floatUpDown 4s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.floating-food-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.floating-food-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.floating-food-price {
+  color: #E85D04;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.floating-food-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.floating-food-rating span {
+  color: #8a8a8a;
+  font-size: 0.68rem;
+  margin-left: 6px;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===== Value Strip ===== */
+.value-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  scrollbar-width: none;
+}
+
+.value-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.value-card {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background-color: #151515;
+  border: 1px solid #232323;
+  border-radius: 14px;
+  padding: 20px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.value-card:hover {
+  border-color: rgba(232, 93, 4, 0.4);
+  transform: translateY(-3px);
+}
+
+.value-card svg {
+  color: #E85D04;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.value-card h3 {
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+
+.value-card p {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+}
+
+/* ===== Featured Food ===== */
+.landing-featured {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.landing-featured h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.landing-section-sub {
+  color: #b0b0b0;
+  margin-bottom: 40px;
+}
+
+.landing-food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.landing-food-card {
+  background-color: #151515;
+  border: 1px solid #232323;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.landing-food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(232, 93, 4, 0.35);
+}
+
+.landing-food-image-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.landing-food-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.landing-food-card:hover .landing-food-image-wrap img {
+  transform: scale(1.08);
+}
+
+.landing-food-info {
+  padding: 18px;
+}
+
+.landing-food-info h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.landing-food-info p {
+  color: #a8a8a8;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.landing-food-price {
+  color: #E85D04;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ===== Brand Story ===== */
+.brand-story {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.brand-story-image {
+  border-radius: 18px;
+  overflow: hidden;
+  height: 320px;
+}
+
+.brand-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-story-content h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.brand-story-content p {
+  color: #b8b8b8;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  max-width: 480px;
+}
+
+.brand-story-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-detail-line {
+  width: 24px;
+  height: 2px;
+  background-color: #E85D04;
+  flex-shrink: 0;
+}
+
+.brand-detail p {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ===== Final CTA ===== */
+.landing-cta {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.landing-cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.landing-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landing-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 0 24px;
+}
+
+.landing-cta-content h2 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+}
+
+.landing-cta-content p {
+  color: #d8d8d8;
+  margin-bottom: 28px;
+}
+
+/* ===== Footer ===== */
+.landing-footer {
+  background-color: #0a0a0a;
+  padding: 48px 24px 24px;
+}
+
+.landing-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.landing-footer-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.landing-footer-logo span {
+  color: #E85D04;
+}
+
+.landing-footer-tagline {
+  color: #a8a8a8;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.landing-footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.landing-footer-links a {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.landing-footer-links a:hover {
+  color: #E85D04;
+}
+
+.landing-footer-bottom {
+  text-align: center;
+  color: #6b6b6b;
+  font-size: 0.82rem;
+  border-top: 1px solid #1c1c1c;
+  padding-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 900px) {
+  .brand-story {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand-story-image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .floating-food-card {
+    right: 5%;
+    bottom: 6%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-hero {
+    min-height: 82vh;
+    padding: 90px 18px 100px;
+    align-items: flex-start;
+    padding-top: 110px;
+  }
+
+  .landing-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .landing-hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .landing-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .landing-hero-actions .btn {
+    width: 100%;
+  }
+
+  .floating-food-card {
+    position: static;
+    margin-top: 24px;
+    max-width: 100%;
+    animation: none;
+  }
+
+  .value-card {
+    min-width: 260px;
+  }
+
+  .landing-featured h2,
+  .brand-story-content h2,
+  .landing-cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .brand-story-image {
+    height: 220px;
+  }
+
+  .landing-footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .landing-footer-links {
+    justify-content: center;
+  }
+}
