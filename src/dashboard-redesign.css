@@ -603,3 +603,158 @@
     justify-content: center;
   }
 }
+/* ===== Compact Greeting ===== */
+.greeting-section.dash-greeting-compact {
+  margin-bottom: 16px;
+}
+
+.greeting-section.dash-greeting-compact h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+/* ===== Subtle Dashboard Background ===== */
+.dashboard-page-wrap.dash-bg-accent {
+  background:
+    radial-gradient(circle at top right, rgba(232, 93, 4, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at bottom left, rgba(232, 93, 4, 0.03) 0%, transparent 50%),
+    #0f0f0f;
+}
+
+/* ===== Featured Food Hero ===== */
+.featured-hero {
+  position: relative;
+  height: 240px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.featured-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-hero:hover .featured-hero-image {
+  transform: scale(1.04);
+}
+
+.featured-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.15) 0%,
+    rgba(10, 10, 10, 0.6) 55%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+}
+
+.featured-hero-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px;
+}
+
+.featured-hero-eyebrow {
+  color: #E85D04;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.featured-hero-content h2 {
+  font-size: 1.3rem;
+  color: #f5f5f5;
+  margin-bottom: 4px;
+}
+
+.featured-hero-desc {
+  color: #cfcfcf;
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+  max-width: 320px;
+}
+
+.featured-hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.featured-hero-price {
+  color: #f5f5f5;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.featured-hero-btn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ===== Popular Meals grid tweak ===== */
+.dash-food-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 700px) {
+  .featured-hero {
+    height: 300px;
+  }
+
+  .featured-hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .featured-hero-desc {
+    font-size: 0.9rem;
+    max-width: 420px;
+  }
+
+  .dash-food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .dash-food-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .featured-hero {
+    height: 210px;
+  }
+
+  .featured-hero-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .featured-hero-desc {
+    font-size: 0.78rem;
+  }
+
+  .featured-hero-price {
+    font-size: 0.92rem;
+  }
+
+  .featured-hero-btn {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+  }
+}

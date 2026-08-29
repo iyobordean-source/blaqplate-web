@@ -8,7 +8,7 @@ function BottomNav() {
   const navItems = [
     { label: 'Home', icon: Home, path: '/dashboard' },
     { label: 'Menu', icon: UtensilsCrossed, path: '/menu' },
-    { label: 'Orders', icon: ClipboardList, path: null },
+    { label: 'Orders', icon: ClipboardList, path: '/orders' },
     { label: 'Profile', icon: User, path: '/profile' },
   ];
 
@@ -20,7 +20,7 @@ function BottomNav() {
           <button
             key={label}
             className={`bottom-nav-item ${isActive ? 'active' : ''}`}
-            onClick={() => (path ? navigate(path) : alert('Orders page coming soon'))}
+            onClick={() => (path ? navigate(path) : alert('Coming soon'))}
           >
             <Icon size={20} />
             <span>{label}</span>

@@ -34,35 +34,34 @@ function Navbar() {
           className="navbar-hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="mobile-nav-panel">
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/menu" onClick={closeMenu}>Menu</Link>
-          <button
-            className="mobile-nav-link"
-            onClick={() => {
-              closeMenu();
-              navigate('/login');
-            }}
-          >
-            Login
-          </button>
-          <button
-            className="mobile-nav-link mobile-nav-signup"
-            onClick={() => {
-              closeMenu();
-              navigate('/signup');
-            }}
-          >
-            Sign Up
-          </button>
-        </div>
-      )}
+      <div className={`mobile-nav-panel ${menuOpen ? 'open' : ''}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/menu" onClick={closeMenu}>Menu</Link>
+        <button
+          className="mobile-nav-link"
+          onClick={() => {
+            closeMenu();
+            navigate('/login');
+          }}
+        >
+          Login
+        </button>
+        <button
+          className="mobile-nav-link mobile-nav-signup"
+          onClick={() => {
+            closeMenu();
+            navigate('/signup');
+          }}
+        >
+          Sign Up
+        </button>
+      </div>
     </header>
   );
 }
